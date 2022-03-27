@@ -24,7 +24,15 @@ struct ApiCallers{
         AF.request("http://localhost:8080/update", method: .patch, encoding: URLEncoding.httpBody, headers: ["title": title, "note": note, "date": date, "id": id])
             .responseDecodable(of: Note.self){ response in
                 
+                print(response)
+            }
+    }
+    
+    func deleteNote(id: String){
+        AF.request("http://localhost:8080/delete", method: .delete, encoding: URLEncoding.httpBody, headers: ["id": id])
+            .responseDecodable(of: Note.self){ response in
                 
+                print(response)
             }
     }
     

@@ -41,9 +41,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="liY-vj-Yw7">
-                        <barButtonItem key="leftBarButtonItem" title="Delete" id="4SV-1l-iqU">
-                            <color key="tintColor" systemColor="systemRedColor"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fQR-Rm-wVR">
                             <connections>
                                 <action selector="addNoteButtonPressed:" destination="BYZ-38-t0r" id="gq4-1G-d72"/>
@@ -52,6 +49,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="NotesTableView" destination="w9M-fM-XdN" id="EfO-z4-Kxz"/>
+                        <segue destination="i5q-u9-f2f" kind="show" id="2Ph-yi-aGn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -67,12 +65,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0f-OK-GZc">
-                                <rect key="frame" x="15" y="64" width="384" height="42"/>
+                                <rect key="frame" x="15" y="108" width="384" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Start Typing" translatesAutoresizingMaskIntoConstraints="NO" id="OEz-Qh-PPb">
-                                <rect key="frame" x="15" y="136" width="384" height="726"/>
+                                <rect key="frame" x="15" y="180" width="384" height="682"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -93,11 +91,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Note" id="AdW-V8-rWf">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="S9B-E7-T7R">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="i5q-u9-f2f" id="3p6-Dh-0Gu"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="S9B-E7-T7R">
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="i5q-u9-f2f" id="3p6-Dh-0Gu"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Delete" id="4SV-1l-iqU">
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="i5q-u9-f2f" id="b29-zJ-5hV"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="noteTextView" destination="OEz-Qh-PPb" id="sxD-M3-IDE"/>

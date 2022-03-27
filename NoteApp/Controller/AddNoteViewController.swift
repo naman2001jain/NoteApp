@@ -20,6 +20,11 @@ class AddNoteViewController: UIViewController {
         noteTextView.text = note?.note
     }
     
+    @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
+        ApiCallers.shared.deleteNote(id: note!._id)
+        self.navigationController?.popViewController(animated: true)
+        
+    }
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
 //        ApiCallers.shared.addNotes(title: titleTextField.text!, note: noteTextView.text, date: "placeholder")
         
