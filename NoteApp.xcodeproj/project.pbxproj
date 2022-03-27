@@ -10,6 +10,7 @@
 		241D6F47DF82A8F7183D0834 /* Pods_NoteAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE77F86D6679F79F77263641 /* Pods_NoteAppTests.framework */; };
 		2B33E4D5E30A174E43FA1154 /* Pods_NoteApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5225AD0F04DE18C5E3AAB41A /* Pods_NoteApp.framework */; };
 		5FEAB1833C85B00182EBF0F3 /* Pods_NoteApp_NoteAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D60F4CCBC1EA09C00FD50FA /* Pods_NoteApp_NoteAppUITests.framework */; };
+		B289551927F0EFC70061F98F /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289551827F0EFC70061F98F /* NotesTableViewCell.swift */; };
 		B2CC910F27F023F200256B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CC910E27F023F200256B93 /* AppDelegate.swift */; };
 		B2CC911127F023F200256B93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CC911027F023F200256B93 /* SceneDelegate.swift */; };
 		B2CC911627F023F200256B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2CC911427F023F200256B93 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		5A8FBA4EA58E2D84FC47FB8B /* Pods-NoteAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteAppTests.debug.xcconfig"; path = "Target Support Files/Pods-NoteAppTests/Pods-NoteAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		872FE29348AECF0D28011694 /* Pods-NoteApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteApp.debug.xcconfig"; path = "Target Support Files/Pods-NoteApp/Pods-NoteApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B108C2D7D12F64B5857F0DB4 /* Pods-NoteApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteApp.release.xcconfig"; path = "Target Support Files/Pods-NoteApp/Pods-NoteApp.release.xcconfig"; sourceTree = "<group>"; };
+		B289551827F0EFC70061F98F /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		B2CC910B27F023F200256B93 /* NoteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2CC910E27F023F200256B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2CC911027F023F200256B93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,7 +109,6 @@
 				5A8FBA4EA58E2D84FC47FB8B /* Pods-NoteAppTests.debug.xcconfig */,
 				354B10F4ED922C433CC14A1E /* Pods-NoteAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -186,6 +187,7 @@
 			children = (
 				B2CC914327F024AB00256B93 /* HomeViewController.swift */,
 				B2CC914527F0293D00256B93 /* AddNoteViewController.swift */,
+				B289551827F0EFC70061F98F /* NotesTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -461,6 +463,7 @@
 				B2CC914627F0293D00256B93 /* AddNoteViewController.swift in Sources */,
 				B2CC910F27F023F200256B93 /* AppDelegate.swift in Sources */,
 				B2CC911127F023F200256B93 /* SceneDelegate.swift in Sources */,
+				B289551927F0EFC70061F98F /* NotesTableViewCell.swift in Sources */,
 				B2CC914427F024AB00256B93 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

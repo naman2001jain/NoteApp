@@ -9,8 +9,9 @@ import UIKit
 
 class AddNoteViewController: UIViewController {
     
+    @IBOutlet weak var deleteButtonOutlet: UIBarButtonItem!
     var note: Note?
-    
+    var update: Bool = false
     @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var noteTextView: UITextView!
@@ -20,18 +21,36 @@ class AddNoteViewController: UIViewController {
         noteTextView.text = note?.note
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if(!update){
+            deleteButtonOutlet.isEnabled = false
+            deleteButtonOutlet.title = ""
+        }
+    }
+    
     @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
         ApiCallers.shared.deleteNote(id: note!._id)
         self.navigationController?.popViewController(animated: true)
         
     }
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-//        ApiCallers.shared.addNotes(title: titleTextField.text!, note: noteTextView.text, date: "placeholder")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-mm-yyyy"
         
-        ApiCallers.shared.updateNotes(title: titleTextField.text!, note: noteTextView.text, date: "placeholder", id: note!._id)
+        let date =  dateFormatter.string(from: Date())
         
+        if(update){
+            ApiCallers.shared.updateNotes(title: titleTextField.text!, note: noteTextView.text, date: date, id: note!._id)
+            self.navigationController?.popViewController(animated: true)
+
+        }
+        else if (titleTextField.text != "" && noteTextView.text != ""){
+            ApiCallers.shared.addNotes(title: titleTextField.text!, note: noteTextView.text, date: date)
+            
+            self.navigationController?.popViewController(animated: true)
+
+        }
         
-        self.navigationController?.popViewController(animated: true)
     }
     
 }

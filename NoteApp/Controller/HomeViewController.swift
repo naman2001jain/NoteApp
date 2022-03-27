@@ -26,7 +26,13 @@ class HomeViewController: UIViewController {
         NotesTableView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        ApiCallers.shared.fetchNotes()
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        ApiCallers.shared.fetchNotes()
+    }
     @IBAction func addNoteButtonPressed(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddNoteViewController") as! AddNoteViewController
@@ -54,12 +60,17 @@ extension HomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddNoteViewController") as! AddNoteViewController
         vc.note = notesArray[indexPath.row]
+        vc.update = true
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NotesTableViewCell", for: indexPath)
-        cell.textLabel?.text = notesArray[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NotesTableViewCell", for: indexPath) as! NotesTableViewCell
+        cell.titleLabel.text = notesArray[indexPath.row].title
+        cell.noteLabel.text = notesArray[indexPath.row].note
+        cell.dateLabel.text = notesArray[indexPath.row].date
+        
+        
         return cell
     }
 }
