@@ -28,7 +28,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKc-Sh-M9l">
-                                                    <rect key="frame" x="28" y="11" width="307" height="32"/>
+                                                    <rect key="frame" x="28" y="11" width="53.5" height="32"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -50,7 +50,7 @@
                                                 <constraint firstItem="gEW-iL-Wc6" firstAttribute="trailing" secondItem="dY5-0m-xhl" secondAttribute="trailing" id="8F7-Pm-bdV"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="dY5-0m-xhl" secondAttribute="trailing" constant="8" id="Kkp-49-z7u"/>
                                                 <constraint firstItem="dY5-0m-xhl" firstAttribute="centerY" secondItem="PKc-Sh-M9l" secondAttribute="centerY" id="LPB-3l-5pa"/>
-                                                <constraint firstItem="dY5-0m-xhl" firstAttribute="leading" secondItem="PKc-Sh-M9l" secondAttribute="trailing" constant="10" id="SZZ-Pl-8Zl"/>
+                                                <constraint firstItem="dY5-0m-xhl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PKc-Sh-M9l" secondAttribute="trailing" constant="10" id="SZZ-Pl-8Zl"/>
                                                 <constraint firstItem="PKc-Sh-M9l" firstAttribute="leading" secondItem="lWv-d5-2cc" secondAttribute="leadingMargin" constant="8" id="ZBG-MW-pzJ"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="gEW-iL-Wc6" secondAttribute="bottom" constant="10" id="a2e-Oo-3yw"/>
                                                 <constraint firstItem="gEW-iL-Wc6" firstAttribute="leading" secondItem="PKc-Sh-M9l" secondAttribute="leading" id="miZ-RJ-ePB"/>
